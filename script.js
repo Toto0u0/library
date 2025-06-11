@@ -54,6 +54,26 @@ function renderBook() {
         cardContainer.removeChild(card);
     })
 
+    // create an unread button to replace the 'read' button when its clicked
+    unreadBtn = document.createElement('button');
+    unreadBtn.textContent = "Read";
+    unreadBtn.addEventListener('click', function() {
+        card.style = "background-color:rgb(239, 121, 94); height: 300px; width: 150px; margin: 15px;";
+        card.removeChild(unreadBtn);
+        card.appendChild(readBtn);
+        
+    })
+
+    // create a button that marks the book as read
+    readBtn = document.createElement('button');
+    readBtn.textContent = "Not Read";
+    readBtn.addEventListener('click', function() {
+        card.style = "background-color: aquamarine; height: 300px; width: 150px; margin: 15px;";
+        card.removeChild(readBtn);
+        card.appendChild(unreadBtn);
+    })
+
+    
     // button to render a book on the screen
     tempBtn.textContent = 'Remove Book';
     // get the ID, name, pages and author from the array and convert it to a string
@@ -93,6 +113,7 @@ function renderBook() {
     card.appendChild(bookTitleCard);
     card.appendChild(bookAuthorCard);
     card.appendChild(bookPagesCard);
+    card.appendChild(readBtn);
     cardContainer.appendChild(card);
 
 }

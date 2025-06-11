@@ -1,0 +1,22 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'roboto', sans-serif;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+li button {
+    background-color: azure;
+}
+
+li {
+    margin: 20px;
+}
+
